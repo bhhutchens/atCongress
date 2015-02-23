@@ -15,10 +15,12 @@
       Top Tweeters @Congress
     </h2>
     <ul>
-      <% @top_users.each do |user| %>
-        <li>
-          <img src='<%= user.profile_image_url_https %>' > <%= user.tweet_count %> Tweets: @<%= user.screen_name %>
-        </li>
+      <% if @top_users %>
+        <% @top_users.each do |user| %>
+          <li>
+            <img src='<%= user.profile_image_url_https %>' > <%= user.tweet_count %> Tweets: @<%= user.screen_name %>
+          </li>
+        <% end %>
       <% end %>
     </ul>
   </div>
