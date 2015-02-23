@@ -47,7 +47,7 @@ get '/results' do
 end
 
 get '/oauth' do
-  request_token = oauth_client.request_token(:oauth_callback => 'http://localhost:9393/oauth/callback')
+  request_token = oauth_client.request_token(:oauth_callback => 'https://atcongress.herokuapp.com/oauth/callback')
   session[:request_token] = request_token.token
   session[:request_token_secret] = request_token.secret
   redirect request_token.authorize_url
