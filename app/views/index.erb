@@ -1,0 +1,25 @@
+<div id='index'>
+  <h2>
+    Find out what your Congressional Representatives are saying on the issues you care about.
+  </h2>
+  <h2>
+    And tweet @ them.
+  </h2>
+  <a href='/oauth'>
+    <h3>
+      Sign in with Twitter!
+    </h3>
+  </a>
+  <div id='top_tweeters'>
+    <h2>
+      Top Tweeters @Congress
+    </h2>
+    <ul>
+      <% @top_users.each do |user| %>
+        <li>
+          <img src='<%= user.profile_image_url_https %>' > <%= user.tweet_count %> Tweets: @<%= user.screen_name %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
