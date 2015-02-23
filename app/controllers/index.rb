@@ -82,3 +82,8 @@ post '/ajax/tweet' do
   @client.update(params[:tweet])
   {tweet: params[:tweet]}.to_json
 end
+
+get '/logout' do
+  session.clear
+  redirect '/'
+end
