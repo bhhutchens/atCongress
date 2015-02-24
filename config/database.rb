@@ -40,3 +40,7 @@ ActiveRecord::Base.establish_connection(
   :database => DB_NAME,
   :encoding => 'utf8'
 )
+
+after do
+  ActiveRecord::Base.clear_active_connections!
+end
